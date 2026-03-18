@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment — TravelGo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="logo-icon">✈</span>
+      <span>TravelGo</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="search.html">Home</a></li>
+      <li><a href="mybookings.html">My Bookings</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+
+  <main class="main-content">
+    <div style="margin-bottom:20px">
+      <a href="booking.html" class="back-link">← Back to Passenger Details</a>
+    </div>
+
+    <section class="payment-section">
+      <!-- Left: Order Summary -->
+      <div class="payment-summary-card fade-up">
+        <h2>Order Summary</h2>
+        <div id="paymentSummary"></div>
+        <div class="payment-total">
+          <span class="payment-total-label">Total Amount</span>
+          <span id="totalAmount" class="payment-total-amount">₹0</span>
+        </div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.1)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <span style="font-size:1.2rem">🔒</span>
+            <span style="font-size:0.78rem;color:rgba(255,255,255,0.45)">Payments are 100% secure & encrypted</span>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+            <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.5);padding:4px 10px;border-radius:4px;font-size:0.7rem;font-weight:600">VISA</span>
+            <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.5);padding:4px 10px;border-radius:4px;font-size:0.7rem;font-weight:600">MASTERCARD</span>
+            <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.5);padding:4px 10px;border-radius:4px;font-size:0.7rem;font-weight:600">UPI</span>
+            <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.5);padding:4px 10px;border-radius:4px;font-size:0.7rem;font-weight:600">NETBANKING</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Payment Form -->
+      <div class="payment-form-card fade-up" style="animation-delay:0.1s">
+        <h1>Payment Details</h1>
+        <p class="section-subtitle">Select your preferred payment method</p>
+
+        <div class="payment-method-grid" id="paymentMethodGrid">
+          <button type="button" class="payment-method-btn active" data-method="Credit Card">
+            <span>💳</span>Credit Card
+          </button>
+          <button type="button" class="payment-method-btn" data-method="Debit Card">
+            <span>🏧</span>Debit Card
+          </button>
+          <button type="button" class="payment-method-btn" data-method="UPI">
+            <span>📱</span>UPI
+          </button>
+          <button type="button" class="payment-method-btn" data-method="Net Banking">
+            <span>🏦</span>Net Banking
+          </button>
+        </div>
+
+        <input type="hidden" id="paymentMethod" value="Credit Card">
+
+        <form id="paymentForm">
+          <div class="form-group">
+            <label for="cardNumber" id="cardNumberLabel">Card Number</label>
+            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+          </div>
+          <div class="payment-row" id="cardExtraFields">
+            <div class="form-group">
+              <label for="expiryDate">Expiry (MM/YY)</label>
+              <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV</label>
+              <input type="password" id="cvv" placeholder="•••" maxlength="4" required>
+            </div>
+          </div>
+          <p id="paymentError" class="error-msg"></p>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:8px">
+            🔒 Pay Securely
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal hidden">
+    <div class="modal-content success-modal pop-in">
+      <div class="success-checkmark">
+        <span class="checkmark-icon">✓</span>
+      </div>
+      <h2>Booking Confirmed!</h2>
+      <p>Your ticket has been booked successfully.</p>
+      <p style="font-size:0.82rem;color:var(--ink-muted);margin-bottom:0">A confirmation will be sent to your email.</p>
+      <div class="success-booking-id">
+        <span class="id-label">Booking ID</span>
+        <span id="confirmedBookingId" class="id-value"></span>
+      </div>
+      <a href="mybookings.html" class="btn btn-primary btn-lg" style="width:100%">View My Bookings</a>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="booking.js"></script>
+  <script src="payment.js"></script>
+
+</body>
+</html>
