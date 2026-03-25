@@ -141,7 +141,7 @@ npx serve .
 - **D.Krishna Mahesh**: Authentication & user management 
 
 ### LinkedIn URL
-- P.Kesava Datta :
+- P.Kesava Datta :https://www.linkedin.com/in/kesava-datta-polaki-b1a27832b/
 - P.Jaya Lakshmi :https://www.linkedin.com/in/pilli-jaya-lakshmi
 - D.Krishna Mahesh :https://www.linkedin.com/in/krishna-mahesh-d
 - M.Naga venkata sridhara :https://www.linkedin.com/in/sridhar-mutyala
