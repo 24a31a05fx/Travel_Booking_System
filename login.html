@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — TravelGo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <div class="auth-bg">
+    <div class="auth-bg-blob blob1"></div>
+    <div class="auth-bg-blob blob2"></div>
+    <div class="auth-bg-blob blob3"></div>
+  </div>
+
+  <div class="auth-wrapper">
+    <div class="auth-container fade-in">
+      <div class="auth-logo">
+        <div class="auth-logo-icon">✈</div>
+        <h1>TravelGo</h1>
+        <p>Your world, one booking away</p>
+      </div>
+
+      <div class="form-toggle">
+        <button class="toggle-btn active" data-form="login">Sign In</button>
+        <button class="toggle-btn" data-form="register">Create Account</button>
+      </div>
+
+      <form id="loginForm" class="auth-form active">
+        <h2>Welcome back</h2>
+        <div class="form-group">
+          <label for="loginEmail">Email or Username</label>
+          <input type="text" id="loginEmail" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" required>
+        </div>
+        <p id="loginError" class="error-msg"></p>
+        <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:8px">Sign In</button>
+        <p style="text-align:center;margin-top:16px;font-size:0.82rem;color:rgba(255,255,255,0.4)">
+          Demo: register first, then log in
+        </p>
+      </form>
+
+      <form id="registerForm" class="auth-form">
+        <h2>Create account</h2>
+        <div class="form-group">
+          <label for="regName">Full Name</label>
+          <input type="text" id="regName" placeholder="Arjun Sharma" required>
+        </div>
+        <div class="form-group">
+          <label for="regEmail">Email</label>
+          <input type="email" id="regEmail" placeholder="arjun@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="regPassword">Password</label>
+          <input type="password" id="regPassword" placeholder="Min 6 characters" required minlength="6">
+        </div>
+        <div class="form-group">
+          <label for="regConfirmPassword">Confirm Password</label>
+          <input type="password" id="regConfirmPassword" placeholder="Repeat password" required>
+        </div>
+        <p id="registerError" class="error-msg"></p>
+        <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top:8px">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>
