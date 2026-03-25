@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBooking - Bharat ka Travel App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body class="home-page">
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-inner">
+            <div class="header-left">
+                <a href="search.html" class="logo-link">
+                    <span class="logo-text">TravelBooking</span>
+                    <span class="tagline">Bharat ka Travel App</span>
+                </a>
+                <nav class="header-nav">
+                    <a href="#" class="header-link">EMTMate</a>
+                    <a href="#" class="header-link">EMTDesk</a>
+                    <a href="#" class="header-link">EMTRoyale</a>
+                    <a href="#" class="header-link">Explore Bharat</a>
+                    <a href="#" class="header-link">Join EMTPro</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="country-select">
+                    <span class="flag">🇮🇳</span>
+                    <span>India</span>
+                </div>
+                <button class="dark-toggle" aria-label="Dark mode">🌙</button>
+                <a href="mybookings.html" class="header-link">My Bookings</a>
+                <a href="login.html" class="btn-login">Login or Signup</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Nav -->
+    <nav class="main-nav">
+        <a href="#" class="nav-item active"><span class="nav-icon">✈</span> Flights</a>
+        <a href="#" class="nav-item"><span class="nav-icon">🏨</span> Hotels</a>
+        <a href="#" class="nav-item"><span class="nav-icon">🚂</span> Trains</a>
+        <a href="#" class="nav-item"><span class="nav-icon">🚌</span> Bus</a>
+        <a href="#" class="nav-item"><span class="nav-icon">🏖</span> Holidays</a>
+        <a href="#" class="nav-item"><span class="nav-icon">🚗</span> Cabs</a>
+        <a href="#" class="nav-item"><span class="nav-icon">🎭</span> Activities</a>
+        <a href="#" class="nav-item"><span class="nav-icon">📋</span> Visa</a>
+        <a href="#" class="nav-item"><span class="nav-icon">⋯</span> More</a>
+    </nav>
+
+    <!-- Flight Search Hero -->
+    <section class="search-hero">
+        <div class="search-hero-inner">
+            <span class="search-title">Search Lowest Price</span>
+            <div class="trip-type">
+                <button class="trip-btn active" data-trip="oneway">One Way</button>
+                <button class="trip-btn" data-trip="round">Round Trip</button>
+                <button class="trip-btn" data-trip="multicity">Multicity</button>
+            </div>
+            <form id="searchForm" class="flight-search-form">
+                <input type="hidden" id="travelType" value="Flight">
+                <div class="search-row">
+                    <div class="search-field from-field">
+                        <label>FROM</label>
+                        <div class="field-wrapper">
+                            <input type="text" id="fromCity" value="Delhi" placeholder="City or Airport" autocomplete="off">
+                            <span class="field-sub" id="fromSub">[DEL] Indira Gandhi International Airport</span>
+                            <div id="fromSuggestions" class="suggestions-dropdown hidden"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="swap-btn" id="swapBtn">⇄</button>
+                    <div class="search-field to-field">
+                        <label>TO</label>
+                        <div class="field-wrapper">
+                            <input type="text" id="toCity" value="Mumbai" placeholder="City or Airport" autocomplete="off">
+                            <span class="field-sub" id="toSub">[BOM] Chhatrapati Shivaji International Airport</span>
+                            <div id="toSuggestions" class="suggestions-dropdown hidden"></div>
+                        </div>
+                    </div>
+                    <div class="search-field">
+                        <label>DEPARTURE</label>
+                        <input type="date" id="travelDate" class="date-input">
+                        <span class="field-sub" id="departSub">Sunday</span>
+                    </div>
+                    <div class="search-field return-field">
+                        <label>RETURN</label>
+                        <input type="date" id="returnDate" class="date-input" disabled>
+                        <span class="field-sub">Book round trip to save more</span>
+                    </div>
+                    <div class="search-field">
+                        <label>TRAVELLER & CLASS</label>
+                        <div class="traveller-select">
+                            <span id="travellerCount">1 Traveller</span>
+                            <span class="field-sub">Economy</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-search">SEARCH</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Special Fares -->
+    <section class="special-fares">
+        <label>Special Fares (Optional):</label>
+        <div class="fares-row">
+            <label class="fare-option"><input type="radio" name="fare" checked> NEW EaseMyTrip Corporate</label>
+            <label class="fare-option"><input type="radio" name="fare"> Defence Forces</label>
+            <label class="fare-option"><input type="radio" name="fare"> Students</label>
+            <label class="fare-option"><input type="radio" name="fare"> Senior Citizens</label>
+            <label class="fare-option"><input type="radio" name="fare"> Doctors & Nurses</label>
+        </div>
+        <button class="btn-discover">DISCOVER MORE</button>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-cats">
+        <a href="#" class="feat-item"><span>✈</span> Best Flight Deals</a>
+        <a href="#" class="feat-item"><span>🏛</span> Monuments</a>
+        <a href="#" class="feat-item"><span>🚇</span> Metro</a>
+        <a href="#" class="feat-item"><span>🎁</span> Gift Cards</a>
+        <a href="#" class="feat-item"><span>💳</span> EMT Cards</a>
+        <a href="#" class="feat-item"><span>💱</span> Forex</a>
+        <a href="#" class="feat-item"><span>🛫</span> Airport Experience</a>
+    </section>
+
+    <!-- Exclusive Offers -->
+    <section class="exclusive-offers">
+        <h2 class="section-heading">Exclusive Offers</h2>
+        <div class="offers-tabs">
+            <button class="offer-tab active">Best Offers</button>
+            <button class="offer-tab">Bank Offers</button>
+            <button class="offer-tab">Flight</button>
+            <button class="offer-tab">Hotel</button>
+            <button class="offer-tab">Bus</button>
+            <button class="offer-tab">Holidays</button>
+            <button class="offer-tab">Cabs</button>
+            <a href="#" class="view-all-link">View All Offers</a>
+        </div>
+        <div class="offers-carousel">
+            <button class="carousel-btn prev">‹</button>
+            <div class="carousel-track">
+                <div class="offer-card">
+                    <div class="offer-header blue">Best Deals for International Travel</div>
+                    <p>Best Deals on Airlines like EGYPTAIR, British Airways, KLM and many more.</p>
+                    <button class="btn-usecode">Use Code: INTEMT</button>
+                    <a href="#" class="offer-book">Book Now</a>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-header purple">Exclusive Deals for Students</div>
+                    <p>Special student discounts and extra baggage allowance on popular airlines.</p>
+                    <button class="btn-usecode">Use Code: STUDENT</button>
+                    <a href="#" class="offer-book">Book Now</a>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-header green">Lowest Price Guarantee On Hotel</div>
+                    <p>Find Better Hotel Price Anywhere Else & Get Double Refund on Difference.</p>
+                    <button class="btn-usecode">Use Code: HOTEL20</button>
+                    <a href="#" class="offer-book">Book Now</a>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-header pink">Invite & Earn up to Rs. 2000</div>
+                    <p>Now Earn Money by Inviting Friends - Up to Rs. 2000 per referral.</p>
+                    <button class="btn-usecode">Explore</button>
+                    <a href="#" class="offer-book">Book Now</a>
+                </div>
+            </div>
+            <button class="carousel-btn next">›</button>
+        </div>
+        <div class="business-banner">
+            <div class="banner-left">
+                <span class="banner-offer">Up to ₹5,000 OFF*</span>
+                <span class="banner-text">on Business Class Flights</span>
+                <div class="banner-actions">
+                    <button class="btn-code">Use Code EMTAI</button>
+                    <button class="btn-orange">Book Now</button>
+                </div>
+            </div>
+            <div class="banner-right">
+                <span class="airline-badge">AIR INDIA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Flight Routes -->
+    <section class="top-routes">
+        <h2 class="section-heading">Top Flight Routes</h2>
+        <div class="routes-grid">
+            <a href="#" class="route-card"><span class="route-img">🏛</span><span class="route-pair">Chennai ↔ Mumbai</span><span class="route-code">MAA-BOM</span></a>
+            <a href="#" class="route-card"><span class="route-img">🏰</span><span class="route-pair">Delhi ↔ Ahmedabad</span><span class="route-code">DEL-AMD</span></a>
+            <a href="#" class="route-card"><span class="route-img">✈</span><span class="route-pair">Mumbai ↔ Dubai</span><span class="route-code">BOM-DXB</span></a>
+            <a href="#" class="route-card"><span class="route-img">🕌</span><span class="route-pair">Delhi ↔ Goa</span><span class="route-code">DEL-GOI</span></a>
+            <a href="#" class="route-card"><span class="route-img">🏔</span><span class="route-pair">Mumbai ↔ Bangalore</span><span class="route-code">BOM-BLR</span></a>
+            <a href="#" class="route-card"><span class="route-img">🌊</span><span class="route-pair">Kolkata ↔ Mumbai</span><span class="route-code">CCU-BOM</span></a>
+        </div>
+    </section>
+
+    <!-- Important Info -->
+    <section class="info-cards">
+        <div class="info-card">
+            <span class="info-icon">📋</span>
+            <div>
+                <strong>Important Info:</strong> To cancel/claim refund or reschedule/modify your booking.
+                <a href="#">Click here...</a>
+            </div>
+        </div>
+        <div class="info-card">
+            <span class="info-icon">✈</span>
+            <div>
+                <strong>Airline Notifications:</strong> Get instant flight updates and travel alerts from airlines.
+                <a href="#">Click here...</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Destinations -->
+    <section class="trending-dest">
+        <h2 class="section-heading">Trending Tourist Destinations</h2>
+        <div class="dest-grid">
+            <a href="#" class="dest-item"><span class="dest-icon">⛵</span><span>Andaman</span></a>
+            <a href="#" class="dest-item"><span class="dest-icon">🛕</span><span>Kerala</span></a>
+            <a href="#" class="dest-item"><span class="dest-icon">🕌</span><span>Kashmir</span></a>
+            <a href="#" class="dest-item"><span class="dest-icon">🏰</span><span>Rajasthan</span></a>
+            <a href="#" class="dest-item"><span class="dest-icon">⛩</span><span>Bhutan</span></a>
+            <a href="#" class="dest-item"><span class="dest-icon">🗼</span><span>Europe</span></a>
+            <a href="#" class="dest-item"><span class="dest-icon">🛕</span><span>Bali</span></a>
+            <a href="#" class="dest-item"><span class="dest-icon">🏙</span><span>Dubai</span></a>
+            <a href="#" class="dest-item"><span class="dest-icon">🏛</span><span>Vietnam</span></a>
+            <a href="#" class="dest-item"><span class="dest-icon">🛕</span><span>Sri Lanka</span></a>
+        </div>
+    </section>
+
+    <!-- Favourite Places -->
+    <section class="fav-places">
+        <h2 class="section-heading">Favourite Places To Stay</h2>
+        <div class="places-row">
+            <a href="#" class="place-card"><span class="place-city">Delhi</span><span class="place-explore">Explore</span></a>
+            <a href="#" class="place-card"><span class="place-city">Mumbai</span><span class="place-explore">Explore</span></a>
+            <a href="#" class="place-card"><span class="place-city">Bangalore</span><span class="place-explore">Explore</span></a>
+            <a href="#" class="place-card"><span class="place-city">Jaipur</span><span class="place-explore">Explore</span></a>
+            <a href="#" class="place-card"><span class="place-city">Chennai</span><span class="place-explore">Explore</span></a>
+        </div>
+        <button class="btn-viewall">View All</button>
+    </section>
+
+    <!-- Results Section (shown on search) -->
+    <section id="resultsSection" class="results-section hidden">
+        <h2 class="section-heading">Available Options</h2>
+        <div id="searchResults" class="results-grid"></div>
+    </section>
+
+    <!-- EVA Chat Widget -->
+    <div class="eva-chat" id="evaChat">
+        <div class="eva-avatar">EVA</div>
+        <span class="eva-label">Chat Assistant</span>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="autocomplete.js"></script>
+    <script src="search.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>
