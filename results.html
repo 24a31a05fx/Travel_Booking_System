@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results — TravelGo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="logo-icon">✈</span>
+      <span>TravelGo</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="search.html">Home</a></li>
+      <li><a href="mybookings.html">My Bookings</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+
+  <main class="main-content">
+    <section class="results-page">
+      <div class="results-header fade-up">
+        <a href="search.html" class="back-link">← Modify Search</a>
+        <h1>Available Options</h1>
+        <p id="searchSummary"></p>
+      </div>
+      <div id="resultsContainer" class="results-grid"></div>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="search.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const p = new URLSearchParams(window.location.search);
+      const from = p.get('from') || '', to = p.get('to') || '', date = p.get('date') || '', type = p.get('type') || 'Flight';
+      const sum = document.getElementById('searchSummary');
+      if (sum) {
+        const d = date ? new Date(date + 'T00:00:00').toLocaleDateString('en-IN', {day:'numeric',month:'short',year:'numeric',weekday:'short'}) : '';
+        sum.textContent = type + (from ? ' · ' + from + ' → ' + to : '') + (d ? ' · ' + d : '');
+      }
+      window.displayResults(from, to, date, type);
+    });
+  </script>
+</body>
+</html>

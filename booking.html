@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passenger Details — TravelGo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="logo-icon">✈</span>
+      <span>TravelGo</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="search.html">Home</a></li>
+      <li><a href="mybookings.html">My Bookings</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+
+  <main class="main-content">
+    <div style="margin-bottom:20px">
+      <a id="backToResults" href="results.html" class="back-link">← Back to Results</a>
+      <script>var _ru=sessionStorage.getItem("tbs_results_url");if(_ru){document.getElementById("backToResults").href=_ru;}</script>
+    </div>
+
+    <div class="booking-section">
+      <div id="bookingSummary"></div>
+
+      <div class="booking-form-card fade-up">
+        <h1>Passenger Details</h1>
+        <p class="section-subtitle">Please fill in the details exactly as on your ID</p>
+        <form id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="passengerName">Full Name</label>
+              <input type="text" id="passengerName" placeholder="As on government ID" required>
+            </div>
+            <div class="form-group">
+              <label for="passengerAge">Age</label>
+              <input type="number" id="passengerAge" placeholder="e.g. 28" min="1" max="120" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactNumber">Mobile Number</label>
+              <input type="tel" id="contactNumber" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-group">
+              <label for="passengerEmail">Email Address</label>
+              <input type="email" id="passengerEmail" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="seatSelection">Seat Preference</label>
+            <select id="seatSelection">
+              <option value="">No Preference</option>
+              <option value="Window">Window</option>
+              <option value="Aisle">Aisle</option>
+              <option value="Middle">Middle</option>
+            </select>
+          </div>
+          <hr class="form-divider">
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Continue to Payment →</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="booking.js"></script>
+</body>
+</html>

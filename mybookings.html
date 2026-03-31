@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings — TravelGo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="logo-icon">✈</span>
+      <span>TravelGo</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="search.html">Home</a></li>
+      <li><a href="mybookings.html" class="active">My Bookings</a></li>
+      <li><a href="#" id="logoutBtn">Logout</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </nav>
+
+  <main class="main-content">
+    <section class="mybookings-section">
+      <div class="page-header fade-up">
+        <div>
+          <h1>My Bookings</h1>
+          <p>All your upcoming and past travel</p>
+        </div>
+        <span class="bookings-count" id="bookingsCountBadge" style="display:none"></span>
+      </div>
+
+      <div id="bookingsList" class="bookings-list"></div>
+
+      <div id="emptyBookings" class="empty-state hidden">
+        <div class="empty-state-icon">🎫</div>
+        <h2>No bookings yet</h2>
+        <p>Looks like you haven't booked any trips. Search for flights, trains, or buses to get started.</p>
+        <a href="search.html" class="btn btn-primary btn-lg">Search Travel</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="booking.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      window.loadUserBookings();
+    });
+  </script>
+</body>
+</html>
